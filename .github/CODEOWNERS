@@ -1,0 +1,7 @@
+# All files owned by @username
+* @sahilj4in
+
+
+# Root-level files owned by both
+/README.md @sahilj4in @akarshanop
+/.github/ @sahilj4in @akarshanop
