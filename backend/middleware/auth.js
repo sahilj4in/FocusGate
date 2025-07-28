@@ -9,7 +9,8 @@ const   authMiddleware = async (req,res,next) => {
             message: "No token, authorization denied"
         });
     }
-
+//401 is not authorizated
+//500 internal server error
     const token = authHeader.split(' ')[1];
 
     try {
