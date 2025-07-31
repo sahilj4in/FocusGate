@@ -3,9 +3,9 @@ import BlockedSite from "../models/BlockedSite.js"
 
 export const addBlockedSite = async (req,res) => {
     const { url } = req.body;
-
+    console.log(url)
     try {
-        const site = await BlockedSite.create({ user: req.user.id, url });
+        const site = await BlockedSite.create({ user:req.user.id, url });
         res.status(201).json({ site });
     } catch (err) {
         res.status(500).json({ error: err.message });

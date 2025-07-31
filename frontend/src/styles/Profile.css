@@ -1,0 +1,91 @@
+.profile-page {
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f9fc;
+}
+
+.profile-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.profile-card {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.profile-image-section {
+  position: relative;
+}
+
+.profile-imag { /* Note: You have a typo here, it should likely be 'profile-image' */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+.edit-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #4a90e2;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info-row label {
+  font-weight: 600;
+  color: #444;
+  margin-right: 0.5rem;
+}
+
+.info-row span {
+  color: #666;
+}
+
+.progress-section {
+  margin-top: 2rem;
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* --- NEW STYLES FOR LOGOUT BUTTON --- */
+.logout-button {
+  display: block; /* Allows margin auto to work for alignment */
+  margin-left: auto; /* Pushes the button to the right */
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  background-color: #dc3545; /* A standard 'danger' red color */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.logout-button:hover {
+  background-color: #c82333; /* A slightly darker red for hover effect */
+}

@@ -1,0 +1,75 @@
+/* General Layout & Welcome Banner */
+.dashboard-layout {
+  padding: 2rem;
+  background-color: #f8f9fa;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.welcome-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 12px;
+  background-image: linear-gradient(90deg, #e9e7ff, #d8d3ff);
+  color: #343a40;
+  margin-bottom: 2rem;
+}
+
+.welcome-text h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.welcome-text p {
+  margin: 0;
+  font-size: 1rem;
+  color: #495057;
+}
+
+.welcome-image {
+  max-width: 150px;
+  border-radius: 8px;
+}
+
+/* Main Content Area */
+.main-content {
+  display: flex;
+  gap: 2rem;
+}
+
+.blocked-section {
+  flex: 2; /* Takes up 2/3 of the space */
+}
+
+.stats-section {
+  flex: 1; /* Takes up 1/3 of the space */
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Statistics Cards */
+.stat-card-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e9ecef;
+}
+
+.stat-change {
+  margin: 0.75rem 0 0 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.stat-change.increase {
+  color: #28a745;
+}

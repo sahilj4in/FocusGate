@@ -8,6 +8,7 @@ import RegisterPage from './pages/RegisterPage';
 import PrivateRoute from './components/PrivateRoute'; 
 import SettingsPage from './pages/SettingsPage';
 import ProfilePage from './pages/ProfilePage';
+import QuestionDB from './pages/QuestionsDB';
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +24,15 @@ function App() {
           element={
             <PrivateRoute>
               <DashboardPage />
+            </PrivateRoute>
+          }
+        />
+        
+        <Route
+          path="/questions"
+          element={
+            <PrivateRoute>
+              <QuestionDB/>
             </PrivateRoute>
           }
         />

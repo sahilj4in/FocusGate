@@ -1,74 +1,282 @@
+/* General Page Styles */
 .homepage-container {
-  font-family: sans-serif;
-  background: #f7f8fa;
-  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #333;
+  background-color: #ffffff;
 }
 
+/* --- Section Titles --- */
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  color: #111827;
+  text-align: center;
+}
+
+/* --- Hero Section --- */
 .homepage-hero {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
-  padding: 60px 5%;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .hero-content {
   flex: 1;
-  min-width: 300px;
+  max-width: 550px;
 }
 
 .hero-title {
-  font-size: 40px;
-  color: #1a1a1a;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #111827;
 }
 
 .hero-subtitle {
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 30px;
+  font-size: 1.1rem;
+  color: #4b5563;
+  margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
 .hero-cta {
-  background-color: #4f46e5;
-  color: white;
-  padding: 12px 24px;
-  text-decoration: none;
-  border-radius: 6px;
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
   font-weight: 600;
+  color: #ffffff;
+  background-color: #4F46E5; /* Primary purple color */
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s;
 }
 
 .hero-cta:hover {
-  background-color: #4338ca;
+  background-color: #4338CA;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
 }
 
 .hero-image img {
   max-width: 100%;
+  height: auto;
   border-radius: 12px;
-  margin-top: 20px;
 }
 
+/* --- Features Section --- */
 .homepage-features {
-  padding: 40px 5%;
-  background-color: #ffffff;
-  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #f9fafb; /* Light grey background */
 }
 
-.homepage-features h3 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.homepage-features ul {
-  list-style: none;
-  padding: 0;
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
   margin: 0 auto;
-  max-width: 600px;
 }
 
-.homepage-features li {
-  font-size: 18px;
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
+.feature-item {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.feature-item h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* --- Who Is It For? Section --- */
+.homepage-usecase {
+  padding: 4rem 2rem;
+}
+
+.usecase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.usecase-item {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.usecase-item h3 {
+  font-size: 1.25rem;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.usecase-item p {
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+
+/* --- Testimonials Section --- */
+.homepage-testimonials {
+  padding: 4rem 2rem;
+  background-color: #f9fafb;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-item {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  margin: 0;
+}
+
+.testimonial-item p {
+  font-style: italic;
+  color: #374151;
+  line-height: 1.7;
+  margin: 0 0 1rem 0;
+}
+
+.testimonial-item footer {
+  font-weight: 600;
+  color: #4F46E5;
+}
+
+/* --- FAQ Section --- */
+.homepage-faq {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none; /* Removes default marker */
+}
+
+.faq-answer {
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+
+/* --- Final CTA Section --- */
+.homepage-cta {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #4338CA; /* Darker purple for emphasis */
+  color: #ffffff;
+}
+
+.cta-title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.cta-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+
+/* --- Footer --- */
+.homepage-footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  color: #6b7280;
+}
+
+/* === ICON STYLING (THE FIX) === */
+.feature-icon,
+.usecase-icon {
+  /* Set a specific size for the icons */
+  width: 40px;
+  height: 40px;
+  color: #4F46E5;
+  margin-bottom: 1rem;
+}
+
+.usecase-icon {
+  /* Center the icon within its container */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faq-icon {
+  /* Smaller icon for inline text */
+  width: 24px;
+  height: 24px;
+  color: #4F46E5;
+  margin-right: 0.75rem;
+  flex-shrink: 0; /* Prevents icon from shrinking */
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .homepage-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .section-title,
+  .cta-title {
+    font-size: 2rem;
+  }
 }
