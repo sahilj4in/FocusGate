@@ -2,7 +2,7 @@ import { text } from "express";
 import QuestionSession from "../models/QuestionSession.js"
 
 export const generateQuestion = async (req,res) => {
-    const {topic, difficulty } = req.body ;
+    const { exam, topic, difficulty, format, frequency } = req.body ;
 
     try {
         const question = {
