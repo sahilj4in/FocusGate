@@ -1,8 +1,10 @@
 import express from 'express';
-import dotenv from "dotenv"
-import cors from "cors"
-import { connectDB } from "./config/db.js";
+import dotenv from 'dotenv';
+import cors from 'cors';
+import swaggerUi from 'swagger-ui-express';
+import swaggerDocument from './swagger-output.json' assert { type: 'json' };
 
+import { connectDB } from './config/db.js';
 import userRoutes from './routes/userRoutes.js';
 import siteRoutes from './routes/siteRoutes.js';
 import questionRoutes from './routes/questionRoutes.js';
@@ -15,8 +17,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 app.use('/api/users', userRoutes);
 app.use('/api/sites', siteRoutes);
 app.use('/api/questions', questionRoutes);
 
-app.listen(3000, () => {console.log("Listening on port 3000")});
+app.listen(3000, () => {
+  console.log('Listening on port 3000');
+});
