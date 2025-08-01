@@ -9,9 +9,9 @@ import {
 
 const router = express.Router();
 
-router.post('/', authMiddleware, addBlockedSite);
+router.post('/', authMiddleware ,addBlockedSite);
 
-router.get('/', authMiddleware, getBlockedSites);
+router.get('/', authMiddleware , getBlockedSites);
 
 router.delete('/:id', authMiddleware, removeBlockedSite);
 
