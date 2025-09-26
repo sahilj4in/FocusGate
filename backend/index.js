@@ -2,7 +2,9 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
-import swaggerDocument from './swagger-output.json' assert { type: 'json' };
+const { default: swaggerDocument } = await import('./swagger-output.json', {
+  assert: { type: 'json' }
+});
 
 import { connectDB } from './config/db.js';
 import userRoutes from './routes/userRoutes.js';
