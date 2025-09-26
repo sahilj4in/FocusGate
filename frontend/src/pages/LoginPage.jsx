@@ -34,7 +34,6 @@ function Login() {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        {/* Form Block */}
         <div className="login-block">
           <h2 className="login-title">Login</h2>
           <input

@@ -4,6 +4,7 @@ import API from "../api/api";
 import BlockedForms from "./BlockedForms";
 import Modal from "./Modal";
 import { FaTrash, FaPlus } from "react-icons/fa";
+import distractingWebsites from "../data/website.jsx"
 
 function Blocked({ onRefresh }) {
   const [websites, setWebsites] = useState([]);
@@ -39,7 +40,7 @@ function Blocked({ onRefresh }) {
     try {
       const response = await API.post(
         "/sites",
-        { url: website },
+       { url: website.toLowerCase() },
         { headers: { Authorization: token } }
       );
       if (response.status === 201) {

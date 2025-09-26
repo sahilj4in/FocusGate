@@ -52,7 +52,6 @@ function Dashboard() {
           </div>
           <div className="stat-card-wrapper">
             <Card
-            // hard coded value
               className="stats-card"
               title="Questions Answered"
               value="210"

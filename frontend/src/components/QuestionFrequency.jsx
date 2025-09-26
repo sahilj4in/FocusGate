@@ -1,14 +1,17 @@
-// src/components/QuestionFrequency.jsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FiClock } from "react-icons/fi";
 import "../styles/Settings.css";
 
-function Frequency() {
+function Frequency({ onSave }) {
   const [time, setTime] = useState(5);
+
+  useEffect(() => {
+    onSave && onSave(time);
+  }, [time]);
 
   return (
     <div className="settings-card">
-       <div className="card-header">
+      <div className="card-header">
         <FiClock className="card-icon" />
         <h3 className="card-title">Question Frequency</h3>
       </div>

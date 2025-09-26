@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FiBarChart2 } from "react-icons/fi";
 import "../styles/Settings.css";
 
-const DifficultySelector = () => {
+const DifficultySelector = ({ onSave }) => {
   const [value, setValue] = useState(2);
+
+  useEffect(() => {
+    onSave && onSave(value);
+  }, [value]);
 
   const getLabel = (val) => {
     switch(val) {

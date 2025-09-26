@@ -5,18 +5,19 @@ import logo from '../assets/logo.png';
 
 function Navbar() {
   const { pathname } = useLocation();
-
+  const token = window.localStorage.getItem('token')
   const profileImage = "https://placehold.co/40x40/4F46E5/ffffff?text=P";
 
   const isLoggedIn = localStorage.getItem("token");
-
+  
   return (
     <nav className="navbar-container">
       <h1 className="navbar-logo">
         <img src={logo} 
         alt="FocusGate Logo" 
         className="logo-image" />
-        <Link to="/" className={`navbar-link ${pathname === "/" ? "active-link" : ""}`} >FocusGate</Link>
+      {token ? <Link to="/dashboard" className={`navbar-link ${pathname === "/" ? "active-link" : ""}`} >FocusGate</Link>:
+      <Link to="/" className={`navbar-link ${pathname === "/" ? "active-link" : ""}`} >FocusGate</Link>}
       </h1>
       <ul className="navbar-links">
         {isLoggedIn ? (

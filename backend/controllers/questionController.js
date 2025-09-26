@@ -3,7 +3,6 @@ import QuestionSession from "../models/QuestionSession.js"
 
 export const generateQuestion = async (req,res) => {
     const { exam, topic, difficulty, format, frequency } = req.body ;
-
     try {
         const question = {
             text: `What is 2+2 ?`,

@@ -1,5 +1,4 @@
-// src/components/QuestionFormat.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FiCheckSquare } from "react-icons/fi";
 import '../styles/Settings.css';
 
@@ -13,13 +12,17 @@ const ToggleSwitch = ({ label, checked, onChange }) => (
   </div>
 );
 
-function Format() {
+function Format({ onSave }) {
   const [formats, setFormats] = useState({
-    mcq:false,
-    trueFalse:false,
-    shortAnswer:false,
-    numerical:false,
+    mcq: false,
+    trueFalse: false,
+    shortAnswer: false,
+    numerical: false,
   });
+
+  useEffect(() => {
+    onSave && onSave(formats);
+  }, [formats]);
 
   const toggleFormat = (key) => {
     setFormats({ ...formats, [key]: !formats[key] });
@@ -31,7 +34,7 @@ function Format() {
         <FiCheckSquare className="card-icon" />
         <h3 className="card-title">Question Format</h3>
       </div>
-       <p className="card-subtitle">Select Question Formats</p>
+      <p className="card-subtitle">Select Question Formats</p>
       <div className="toggle-group">
         <ToggleSwitch 
           label="Multiple Choice" 
@@ -53,7 +56,7 @@ function Format() {
         <br />
         <ToggleSwitch 
           label="Numerical" 
-          checked={formats.shortAnswer} 
+          checked={formats.numerical} 
           onChange={() => toggleFormat('numerical')} 
         />
       </div>

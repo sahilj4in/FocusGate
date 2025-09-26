@@ -26,7 +26,7 @@ const distractingWebsites = {
   Dailymotion: "https://dailymotion.com",
   PeacockTV: "https://peacocktv.com",
   Crunchyroll: "https://crunchyroll.com",
-  Hotstar: "https://hotstar.com",
+  Hotstar: "https://jiohotstar.com",
   SonyLiv: "https://sonyliv.com",
   JioCinema: "https://jiocinema.com",
   WorldStarHipHop: "https://worldstarhiphop.com",
@@ -70,7 +70,6 @@ const distractingWebsites = {
   Target: "https://target.com",
 
   Quora: "https://quora.com",
-  StackOverflow: "https://stackoverflow.com",
   Medium: "https://medium.com",
   FourChan: "https://4chan.org",
   DeviantArt: "https://deviantart.com",

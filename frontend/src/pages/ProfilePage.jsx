@@ -1,12 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProgressSummary from "../components/ProgressSummary";
 import { FaUserEdit } from "react-icons/fa";
 import "../styles/Profile.css";
+import API from "../api/api"
 
+const token=window.localStorage.getItem('token');
 function ProfilePage() {
   const [image, setImage] = useState(null);
-  const [username, setUsername] = useState("Akarshan Tyagi");
-  const [email, setEmail] = useState("akarshan@example.com");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+
+ useEffect(() => {
+  const handleUser = async () => {
+    try {
+      const response = await API.get('/users/profile',{headers: {Authorization:token}});
+      setUsername(response.data.name);
+      setEmail(response.data.email);
+    } catch (error) {
+      console.error("Error fetching user profile:", error);
+    }
+  };
+  handleUser();
+}, []);
 
   const handleLogout = () => {
   window.localStorage.removeItem('token');

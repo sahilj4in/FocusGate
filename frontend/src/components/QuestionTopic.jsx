@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { FiBookmark } from "react-icons/fi";
 import '../styles/Settings.css';
-import "../data/examTopics"
+import "../data/examTopics";
 
-function Topic() {
+function Topic({ onSave }) {
   const [exam, setExam] = useState("");
   const [topic, setTopic] = useState("");
 
@@ -11,25 +11,35 @@ function Topic() {
   const [topicKeywords, setTopicKeywords] = useState([]);
 
   const handleAddExamKeyword = () => {
-    if (exam && !examKeywords.includes(exam)) {
-      setExamKeywords([...examKeywords, exam]);
-      setExam("");
+    const trimmed = exam.trim();
+    if (trimmed && !examKeywords.includes(trimmed)) {
+      const updated = [...examKeywords, trimmed];
+      setExamKeywords(updated);
+      setExam(""); 
+      onSave && onSave({ examKeywords: updated, topicKeywords }); 
     }
   };
 
   const handleAddTopicKeyword = () => {
-    if (topic && !topicKeywords.includes(topic)) {
-      setTopicKeywords([...topicKeywords, topic]);
-      setTopic("");
+    const trimmed = topic.trim();
+    if (trimmed && !topicKeywords.includes(trimmed)) {
+      const updated = [...topicKeywords, trimmed];
+      setTopicKeywords(updated);
+      setTopic(""); 
+      onSave && onSave({ examKeywords, topicKeywords: updated }); 
     }
   };
 
   const handleRemoveExamKeyword = (keywordToRemove) => {
-    setExamKeywords(examKeywords.filter(keyword => keyword !== keywordToRemove));
+    const updated = examKeywords.filter(keyword => keyword !== keywordToRemove);
+    setExamKeywords(updated);
+    onSave && onSave({ examKeywords: updated, topicKeywords });
   };
 
   const handleRemoveTopicKeyword = (keywordToRemove) => {
-    setTopicKeywords(topicKeywords.filter(keyword => keyword !== keywordToRemove));
+    const updated = topicKeywords.filter(keyword => keyword !== keywordToRemove);
+    setTopicKeywords(updated);
+    onSave && onSave({ examKeywords, topicKeywords: updated });
   };
 
   return (

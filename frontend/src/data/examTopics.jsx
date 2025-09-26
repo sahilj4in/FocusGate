@@ -10,7 +10,7 @@ const examTopics = {
     "Physics"
   ],
   "UPSC": [
-    "Polity",
+    "Politics",
     "History",
     "Geography",
     "Economy",
