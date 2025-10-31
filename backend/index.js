@@ -2,28 +2,33 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
-const { default: swaggerDocument } = await import('./swagger-output.json', {
-  assert: { type: 'json' }
-});
+import swaggerDocument from './swagger-output.json' with { type: 'json' };
 
 import { connectDB } from './config/db.js';
 import userRoutes from './routes/userRoutes.js';
 import siteRoutes from './routes/siteRoutes.js';
 import questionRoutes from './routes/questionRoutes.js';
+import metaRoutes from './routes/metaRoutes.js'
 
 dotenv.config();
 connectDB();
 
 const app = express();
 
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+
+const extensionOrigin = 'chrome-extension:ihbmfcmjggcdbpbfaajokobhffmgfkah';
+
+app.use(cors({ 
+    origin: [extensionOrigin, "http://localhost:5173"], 
+    credentials: true 
+}));
 app.use(express.json());
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
 app.use('/api/users', userRoutes);
 app.use('/api/sites', siteRoutes);
 app.use('/api/questions', questionRoutes);
+app.use('/api/meta', metaRoutes);
 
 app.listen(3000, () => {
   console.log('Listening on port 3000');
