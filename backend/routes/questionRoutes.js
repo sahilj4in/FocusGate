@@ -8,7 +8,7 @@ import authMiddleware from '../middleware/auth.js';
 
 const router = express.Router();
 
-router.post('/generate', authMiddleware, generateQuestion);
+router.post('/generate',   generateQuestion);
 router.post('/validate', authMiddleware, validateAnswer);
 router.get('/stats', authMiddleware, getSessionStats);
 

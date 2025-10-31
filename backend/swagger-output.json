@@ -165,10 +165,19 @@
             "schema": {
               "type": "object",
               "properties": {
+                "exam": {
+                  "example": "any"
+                },
                 "topic": {
                   "example": "any"
                 },
                 "difficulty": {
+                  "example": "any"
+                },
+                "format": {
+                  "example": "any"
+                },
+                "frequency": {
                   "example": "any"
                 }
               }
@@ -323,10 +332,19 @@
             "schema": {
               "type": "object",
               "properties": {
+                "exam": {
+                  "example": "any"
+                },
                 "topic": {
                   "example": "any"
                 },
                 "difficulty": {
+                  "example": "any"
+                },
+                "format": {
+                  "example": "any"
+                },
+                "frequency": {
                   "example": "any"
                 }
               }
